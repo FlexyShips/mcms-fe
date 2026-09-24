@@ -19,6 +19,10 @@ apiClient.interceptors.request.use(
       if (token && config.headers) {
         config.headers.Authorization = `Bearer ${token}`;
       }
+      const tenantSlug = localStorage.getItem("flexy_tenant_slug");
+      if (tenantSlug && config.headers && !config.headers["x-tenant-slug"]) {
+        config.headers["x-tenant-slug"] = tenantSlug;
+      }
     }
     return config;
   },
