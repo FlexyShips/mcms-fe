@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans bg-white">
+      <body className="min-h-full min-w-0 flex flex-col overflow-x-hidden font-sans bg-white">
         <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
